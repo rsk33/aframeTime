@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aframeTime</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
-    <script type="module" src="./sketch-component.js"></script>
-    <script src="./camera.js"></script>
+    <script type="module" src="./components/sketch-component.js"></script>
+    <script src="./js/camera.js"></script>
   </head>
   <body>
     <video id="webcam" autoplay playsinline></video> 
@@ -18,7 +18,7 @@
         <canvas id="mysketch" width=512 height=512></canvas>
       </a-assets>
 
-      <!-- <a-sky src="./hubble_waterworlds_stsci-01ggtf6gyh3pbetsdy77g7tvvy.png"></a-sky> --> 
+      <!-- <a-sky src="./images/hubble_waterworlds_stsci-01ggtf6gyh3pbetsdy77g7tvvy.png"></a-sky>  -->
 
       <a-sphere id="planet" position="0 0 -300" radius="100" color="#028090"></a-sphere>
       <a-sphere id="satellite"  position="43.3 -8.9 -210.3" radius="5" color="#EEB1D5"></a-sphere>
@@ -26,33 +26,33 @@
       <a-plane
         id = "canvas-display"
         width = "8" height = "8"
-        position = "4.35 0.9 -2"
+        position = "-2 0 -2"
         material = "shader: flat; src: #mysketch; transparent: true;"
         sketch = "time: 0.0">		
       </a-plane>
 
 
       <!-- Text. -->
-      <a-entity position="0.5 0.5 0">
+      <a-entity position="0 0.5 0">
         <a-entity mixin="marker" position="0 0 0.01"></a-entity>
         
         <a-entity position="0 0.15 0"
                   text="color: #00FFFF; align: right; value: LONGITUDE:; width: 1.5; font: dejavu; ">
         </a-entity>
-        <a-entity id="longitude" position="1.9 0.15 0"
+        <a-entity id="longitude" position="0.385 0.15 0"
                   text="color: #00FFFF; align: right; value: 0; width: 1.5; font: dejavu; ">
         </a-entity>
         <a-entity position="0 0.075 0"
                   text="color: #00FFFF; align: right; value: LATITUDE:; width: 1.5; font: dejavu; ">
         </a-entity>
-        <a-entity id="latitude" position="1.9 0.075 0"
+        <a-entity id="latitude" position="0.385 0.075 0"
                   text="color: #00FFFF; align: right; value: 0; width: 1.5; font: dejavu; ">
         </a-entity>
         <a-entity position="0 0 0"
                   text="color: #00FFFF; align: right; value: TIMEZONE:; width: 1.5; font: dejavu; ">
         </a-entity>
-        <a-entity id="timezone" position="1.9 0 0"
-                  text="color: #00FFFF; align: right; value: 0; width: 1.5; font: dejavu; ">
+        <a-entity id="timezone" position="1.55 0 0"
+                  text="color: #00FFFF; align: left; value: 0; width: 1.5; font: dejavu; ">
         </a-entity>
       </a-entity>
 
@@ -62,7 +62,6 @@
 
     </a-scene>
     
-    
   </body>
-  <script type="module" src="./iss_time.js" defer></script>
+  <script type="module" src="./js/update_iss.js" defer></script>
 </html>

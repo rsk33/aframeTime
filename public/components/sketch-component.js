@@ -1,5 +1,5 @@
-import { createNoise2D } from 'simplex-noise';
-const noise2D = createNoise2D();
+// import { createNoise2D } from 'simplex-noise';
+// const noise2D = createNoise2D();
 
 function lerp(a, b, t)
 {
@@ -45,8 +45,8 @@ AFRAME.registerComponent('sketch', {
         this.time = lerp(this.time, this.timeTarget, 0.05);
         this.pointerLength.x = -0.08*this.diag*Math.cos((this.time/3 + 1)*Math.PI/2);
         this.pointerLength.y = -0.08*this.diag*Math.sin((this.time/3 + 1)*Math.PI/2);
-        this.circleCenter.x = 0.5*this.diag*(1.0 + 0.8*noise2D(0.00001*t,0.00002*t));
-        this.circleCenter.y = 0.5*this.diag*(1.0 + 0.8*noise2D(0.00003*t,0.00001*t));
+        // this.circleCenter.x = 0.5*this.diag*(1.0 + 0.8*noise2D(0.00001*t,0.00002*t));
+        // this.circleCenter.y = 0.5*this.diag*(1.0 + 0.8*noise2D(0.00003*t,0.00001*t));
 		// draw circle
         this.context.lineWidth = 1;
         this.context.strokeStyle = "#00FFFF";
