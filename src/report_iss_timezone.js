@@ -5,9 +5,9 @@ const iss_api_url = "http://api.open-notify.org/iss-now.json";
 
 function polar2Cartesian(radius, latitude, longitude) {
     return {
-        x: radius * Math.sin(latitude) * Math.cos(longitude),
-        y: radius * Math.sin(latitude) * Math.sin(longitude),
-        z: radius * Math.cos(latitude)
+        x: radius * Math.sin(latitude * Math.PI / 180) * Math.cos(longitude * Math.PI / 180),
+        y: radius * Math.sin(latitude * Math.PI / 180) * Math.sin(longitude * Math.PI / 180),
+        z: radius * Math.cos(latitude * Math.PI / 180)
     }
 }
 
